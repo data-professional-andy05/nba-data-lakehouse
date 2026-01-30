@@ -205,3 +205,26 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# --- Project Specific Data (The Lake) ---
+# Ignore all data files...
+data/
+# ...but keep the empty folder structure
+!data/**/.gitkeep
+
+# --- Secrets & Configs ---
+.env
+
+# --- IDE Settings ---
+.vscode/
+.idea/
+
+# --- Power BI ---
+# Ignore binaries and temp files
+*.pbix
+*.lock
+*.recovery
+# Ignore local user settings inside PBIP folders (prevents noise in commits)
+**/.pbi/localSettings.json
+**/cache.abf

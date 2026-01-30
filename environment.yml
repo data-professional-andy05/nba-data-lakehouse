@@ -1,0 +1,19 @@
+name: nba_data_lakehouse_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pandas
+  - numpy
+  - pyarrow
+  - python-duckdb
+  - requests
+  - tqdm
+  - matplotlib
+  - seaborn
+  - jupyter
+  - ipykernel
+  - python-dotenv
+  - s3fs
+  - pip
