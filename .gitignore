@@ -228,3 +228,6 @@ data/
 # Ignore local user settings inside PBIP folders (prevents noise in commits)
 **/.pbi/localSettings.json
 **/cache.abf
+
+*.csv
+sandbox*.ipynb
