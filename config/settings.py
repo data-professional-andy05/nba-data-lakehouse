@@ -1,17 +1,13 @@
 # config/settings.py
 
-# --- SCRAPING CONFIGURATION ---
+import os
 
-# The seasons we want to process
+# --- SEASONS TO PROCESS ---
+# We keep this list for now. Later we can add the helper function to generate 1996-2018.
 SEASONS = ['2019-20', '2020-21', '2021-22', '2022-23', '2023-24', '2024-25']
 
-# Constraints to avoid getting banned
-REQUEST_DELAY = 1.0   # Seconds to wait between API calls
-TIMEOUT = 30          # Seconds to wait for a response before giving up
-
-# --- HEADERS ---
-# These are the "Good Headers" from your original script.
-# We keep them here in case we need to inject them into nba_api later.
+# --- NETWORK HEADERS ---
+# These are your "Good Headers" that worked. Keep them.
 NBA_HEADERS = {
     'Accept': '*/*',
     'Accept-Encoding': 'gzip, deflate, br, zstd',
@@ -28,3 +24,11 @@ NBA_HEADERS = {
     'Sec-Fetch-Site': 'same-site',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
 }
+
+# --- SCRAPING CONSTRAINTS (Patient Mode) ---
+# We update these to be conservative for future runs.
+REQUEST_DELAY = 4.0   # Base seconds to wait
+RANDOM_JITTER = 3.0   # Up to +3 seconds random
+BATCH_SIZE = 50       # Number of games before a long pause
+BATCH_PAUSE = 60      # Seconds for the "coffee break"
+TIMEOUT = 30
